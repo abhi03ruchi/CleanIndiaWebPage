@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
 * {
     box-sizing: border-box;
     list-style: none;
@@ -6,9 +10,10 @@
 }
 
 body {
-    font-family:Arial, Helvetica, sans-serif;
-    background-color: greenyellow;
-    color: #ea3b50;
+     font-family: 'Luckiest Guy', cursive;
+    background-color: brown;
+    color: green;
+    /* margin-top: 27px; */
 }
 
 header{
@@ -19,21 +24,35 @@ header{
     background-size: cover;
 }
 header h1{
-    font-size: 50px;
+    font-size: 75px;
     background-color: 0009;
     background-attachment: fixed;
+    color: orange;
+    text-shadow: 0 1px 0 greenyellow, 0 2px 0 greenyellow, 0 3px 0 greenyellow, 0 4px 0 greenyellow,
+    0 5px 0 greenyellow, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent,
+    0 9px 0 transparent, 0 10px 10px green;
+    /* text-shadow: 0 3px 0 greenyellow; */
+}
+header h3{
+    color: green;
+    text-shadow: 0 -3px 0 greenyellow;
 }
 nav{
+    margin-top: 50px;
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 15 vh;
-    background :0009;
-    color: red;
+    background :rgba(0,0,0,0.2);
+    color: green;
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
     align-items: center;
-    border-radius: 8px;
-
+    transition: 0.8s;
+    /* border-radius: 8px; */
     /* border-top:  10px solid #3d3f50; */
 }
 .logo{
@@ -49,43 +68,83 @@ nav{
 .menu a{
     font-size: 20px;
     text-decoration: none;
-    color: orange;
-    font-weight: bold;
+    color: darkgreen;
+/*     font-weight: bold; */
     line-height: 50 px;
     position: relative;
 }
+a.active::after{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: darkgreen;
+    animation: appear 1.5s linear;
+}
+@keyframes appear {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 nav a:hover{
     font-style: normal;
-    color: orangered;
-    font-size: xx-large;
+    /* color: brown; */
+    /* font-size: xx-large;
     background-color: yellow; 
     padding-inline: 30px;
-    border-radius: 20px;
-    font-weight: bolder;
+    border-radius: 20px; */
+    /* font-weight: bolder; */
     opacity: 1;
+    text-shadow: 0 -1px 0 greenyellow, 0 -2px 0 greenyellow, 0 -3px 0 greenyellow, 0 -4px 0 greenyellow,
+    0 -5px 0 greenyellow, 0 -6px 0 transparent ,0 4px 4px lightgreen;
+    animation: bounce infinite alternate;
 } 
+@keyframes bounce {
+    100% {
+      top: -20px;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc,
+        0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px 0 #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc,
+        0 50px 25px rgba(0, 0, 0, 0.2);
+    }
+}
 
 section {
+  font-size: 40px;
     text-align: center;
-     padding-top: 25px;  
+     /* padding-top: 25px;   */
     /* padding-bottom: 50px; */
   }
 section h2{
-    padding-top: 25px;
-    padding-bottom: 25px;
+   padding-top: 25px;
+    /* padding-bottom: 25px; */
     font-weight: bolder;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: orangered;
+    /* font-family: 'Josefin Sans', sans-serif; */
+    font-family: 'Luckiest Guy', cursive;
+    background-color: brown;
     color: bisque;
+    border-top: 10px;
+    border-bottom: 0px;
+    border-left: 10px;
+    border-right: 10px;
+    border-style:dashed ;
 }  
-
+section h2:hover{
+    -webkit-text-stroke: 2px bisque;
+    color: transparent;
+    text-shadow: 0 0 4px white;
+}
   .carousel-cell {
     width: 66%;
-    margin-right: 10px;
+    margin-right: 2px;
     border-radius: 5px;
   }
 .box{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   /* font-family: 'Josefin Sans', sans-serif; */
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family:'Comic Neue', cursive ;
     background: bisque;
     color: orangered;
     font-size: large;
@@ -95,18 +154,23 @@ section h2{
     padding-bottom: 25px;
     padding-left: 25px;
     padding-right: 25px;
-    /* border-radius: 5%; */
-    font-weight: 300;
+    /* border-radius: 80%; */
+    /* font-weight: 300; */
     word-spacing: 10px;
+    letter-spacing: 2px;
     border-width: 15px;
     border-style: double ;
 }
 
 footer{
+    background-image: url(../leavesaregreen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-top: 100px;
     position: relative;
     width: 100%;
-    background: lawngreen;
+    /* background: lawngreen; */
+    color: black;
     min-height: 100px;
     padding: 20px 50px ;
     display: flex;
@@ -115,19 +179,94 @@ footer{
     flex-direction: column;
     padding-top: 50px;
 }
-footer .social{
+.wrapper .button{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    /* float: left; */
+    margin: 0 5px;
+    overflow: hidden;
+    background: bisque;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:hover{
+    width: 200px;
+  }
+  .wrapper .button .icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1):hover .icon{
+    background: #4267B2;
+  }
+  .wrapper .button:nth-child(2):hover .icon{
+    background: #1DA1F2;
+  }
+  .wrapper .button:nth-child(3):hover .icon{
+    background: #E1306C;
+  }
+  .wrapper .button:nth-child(4):hover .icon{
+    background: #ff0000;
+  }
+  
+  .wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:hover .icon i{
+    color: #fff;
+  }
+  .wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  .wrapper .button:nth-child(1) span{
+    color: #4267B2;
+  }
+  .wrapper .button:nth-child(2) span{
+    color: #1DA1F2;
+  }
+  .wrapper .button:nth-child(3) span{
+    color: #E1306C;
+  }
+  .wrapper .button:nth-child(4) span{
+    color: #ff0000;
+  }
+
+/* footer .social{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
     flex-wrap: wrap;
+    text-align: center;
 }
 footer .social li{
     list-style: none;
-
-} 
-footer .social li a{
+    position: relative;
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: brown;
+    border-radius: 50%;
+    margin: 0 15px;
+    line-height: 75px;
+}  */
+/* footer .social li a{
     font-size: 2em;
     color: whitesmoke;
     font-weight: bolder;
@@ -136,16 +275,23 @@ footer .social li a{
     transition: 0.5s;
 }
 footer .social li a:hover{
-    transform: translateY(-10px);
-
-}
+     transform: translateY(-10px);  
+    background: yellowgreen;
+    border-radius: 50%;
+    display: block;
+    height: 60px;
+    width: 60px;
+} */
 footer p{
-    color: red;
+    font-family: 'Modak', cursive;
+    color: brown;
     text-align: center;
-    font-size: 100px;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 1.1em;
-    font-weight: bolder;
+    font-size: 50px; 
+    /* font-weight: bolder; */
+    text-shadow: 0 -3px 10px red; 
+    -webkit-text-stroke: 2px wheat;
+   
 }
   
